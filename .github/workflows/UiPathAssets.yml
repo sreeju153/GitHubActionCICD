@@ -1,0 +1,31 @@
+name: Testrun3
+on:
+  pull_request:
+    branches: [master ]
+  workflow_dispatch:
+jobs:
+
+ remove-old-artifacts:
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Remove old artifacts
+      uses: c-hive/gha-remove-artifacts@v1
+      with:
+        age: '1 month'
+ 
+
+      
+     # Facilitate the UiPath CLI in the github artifacts
+    - name: UiPath Cli
+    - run: |
+                 New-Item -Path "C:\\" -ItemType "directory" -Name "uipathcli";
+                 Invoke-WebRequest "https://www.myget.org/F/uipath-dev/api/v2/package/UiPath.CLI/1.0.7758.25166" -OutFile "C:\\uipathcli\\cli.zip";
+                 Expand-Archive -LiteralPath "C:\\uipathcli\\cli.Zip" -DestinationPath "C:\\uipathcli"; 
+                 
+                           
+    - name: create temp file
+      id: AddorUpdate Assets
+      run: |
+                & "C:\\uipathcli\\lib\\net461\\uipcli.exe" asset deploy  "https://cloud.uipath.com" "Sukesh_Vanarasi" -t pxGcX5rSofO0VSUEY_N-Mcg_6zilqoIG5Ca31bNowEIH7 -a Sukesh_Vanarasi  
