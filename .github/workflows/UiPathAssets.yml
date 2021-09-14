@@ -28,4 +28,4 @@ jobs:
     - name: create temp file
       id: AddorUpdate Assets
       run: |
-                & "C:\\uipathcli\\lib\\net461\\uipcli.exe" asset deploy  "https://cloud.uipath.com" "Sukesh_Vanarasi" -t pxGcX5rSofO0VSUEY_N-Mcg_6zilqoIG5Ca31bNowEIH7 -a Sukesh_Vanarasi  
+                & "C:\\uipathcli\\lib\\net461\\uipcli.exe" asset deploy  "https://cloud.uipath.com" "Sreejith" -t Pn_GN6RtRFDQB1rWajYnvO2nBch-ynsCD3I_ly5ZU6zoJ -a UiPatizmjzgt  
