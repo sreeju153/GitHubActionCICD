@@ -1,4 +1,4 @@
-name: Testrun3
+name: UiPathAssets
 on:
   pull_request:
     branches: [master ]
